@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../Purchase/purchasePage.dart';
 import 'Accounts/AccountPage.dart';
 import 'Inventory/InventoryPage.dart';
@@ -42,7 +41,7 @@ class _HomePageBodyState extends State<HomePageBody> {
   Widget build(BuildContext context) {
     return Container(
       child: GridView.count(
-        crossAxisCount: 3,
+        crossAxisCount: 2,
         children: [
           buildGridButton(
             onPressed: () {
