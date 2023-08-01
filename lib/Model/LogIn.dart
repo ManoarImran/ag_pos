@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'Home.dart';
+
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
 
@@ -159,11 +161,11 @@ class _LoginPageBodyState extends State<LoginPageBody> {
                           child: const Text('Login'),
                           onPressed: () {
                             {
-                              // Navigator.pushReplacement(
-                              //   context,
-                              //   MaterialPageRoute(
-                              //       builder: (context) => HomePage()),
-                              // );
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => HomePage()),
+                              );
                             }
                             ;
                           },
