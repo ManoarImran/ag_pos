@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
+import '../Purchase/purchasePage.dart';
+import 'Accounts/AccountPage.dart';
 import 'Inventory/InventoryPage.dart';
+import 'Reports/ReportPage.dart';
+import 'Sales/SalesPage.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -50,8 +54,7 @@ class _HomePageBodyState extends State<HomePageBody> {
           ),
           buildGridButton(
             onPressed: () {
-              // Code for Sales button's onPressed
-              // Navigator.push(context, MaterialPageRoute(builder: (context) => const LeaveApplication()));
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const SalesPage()));
             },
             color: Colors.red,
             imageAsset: 'assets/sales.png',
@@ -59,8 +62,7 @@ class _HomePageBodyState extends State<HomePageBody> {
           ),
           buildGridButton(
             onPressed: () {
-              // Code for Accounts button's onPressed
-              // Navigator.push(context, MaterialPageRoute(builder: (context) => const AttendanceReportPage()));
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const AccountPage()));
             },
             color: Colors.green,
             imageAsset: 'assets/accounts.png',
@@ -68,8 +70,7 @@ class _HomePageBodyState extends State<HomePageBody> {
           ),
           buildGridButton(
             onPressed: () {
-              // Code for Reports button's onPressed
-              // Navigator.push(context, MaterialPageRoute(builder: (context) => const MovementApplicationPage()));
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const ReportPage()));
             },
             color: Colors.deepPurple,
             imageAsset: 'assets/report.png',
@@ -77,8 +78,7 @@ class _HomePageBodyState extends State<HomePageBody> {
           ),
           buildGridButton(
             onPressed: () {
-              // Code for Purchase button's onPressed
-              // Navigator.push(context, MaterialPageRoute(builder: (context) => const DealerOrder()));
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const purchasePage()));
             },
             color: Colors.indigo,
             imageAsset: 'assets/purchase.png',
