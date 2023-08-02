@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'addItem.dart';
+
 class InventoryPage extends StatelessWidget {
   const InventoryPage({Key? key}) : super(key: key);
 
@@ -21,6 +23,14 @@ class InventoryPage extends StatelessWidget {
         color: Colors.yellow, // Set the background color to yellow
         child: const InventoryPageBody(),
       ),
+        floatingActionButton: new FloatingActionButton(
+            elevation: 0.0,
+            child: new Icon(Icons.add),
+            backgroundColor: new Color(0xFF001C30),
+            onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context) => AddItemPage()));
+            }
+        )
     );
   }
 }
@@ -33,13 +43,14 @@ class InventoryPageBody extends StatefulWidget {
 }
 
 class _InventoryPageBodyState extends State<InventoryPageBody> {
-  City? _selectedCity; // Selected city object
+  Intventory? _selectedInventory; // Selected Inventory object
+  final List<String> items = ["Item 1", "Item 2", "Item 3", "Item 4"];
 
-  final List<City> _cities = [
-    City(1, 'Raw'),
-    City(2, 'Finished Good'),
-    City(3, 'Assets'),
-    City(4, 'Materials'),
+  final List<Intventory> inventoryType = [
+    Intventory(1, 'Raw'),
+    Intventory(2, 'Finished Good'),
+    Intventory(3, 'Assets'),
+    Intventory(4, 'Materials'),
   ];
 
   @override
@@ -49,9 +60,9 @@ class _InventoryPageBodyState extends State<InventoryPageBody> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: const Text(
+            const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Text(
                 'Type:',
                 style: TextStyle(
                   fontSize: 18,
@@ -66,15 +77,15 @@ class _InventoryPageBodyState extends State<InventoryPageBody> {
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: DropdownButton<City>(
-                      value: _selectedCity,
-                      onChanged: (City? newValue) {
+                    child: DropdownButton<Intventory>(
+                      value: _selectedInventory,
+                      onChanged: (Intventory? newValue) {
                         setState(() {
-                          _selectedCity = newValue!;
+                          _selectedInventory = newValue!;
                         });
                       },
-                      items: _cities.map((City city) {
-                        return DropdownMenuItem<City>(
+                      items: inventoryType.map((Intventory city) {
+                        return DropdownMenuItem<Intventory>(
                           value: city,
                           child: Text(city.name),
                         );
@@ -88,6 +99,14 @@ class _InventoryPageBodyState extends State<InventoryPageBody> {
                   //         style: TextStyle(fontSize: 20),
                   //       )
                   //     : Text(''),
+                  // ListView.builder(
+                  //   itemCount: items.length,
+                  //   itemBuilder: (context, index) {
+                  //     return ListTile(
+                  //       title: Text(items[index]),
+                  //     );
+                  //   },
+                  // )
                 ],
               ),
             ),
@@ -98,9 +117,9 @@ class _InventoryPageBodyState extends State<InventoryPageBody> {
   }
 }
 
-class City {
+class Intventory {
   final int id;
   final String name;
 
-  City(this.id, this.name);
+  Intventory(this.id, this.name);
 }
