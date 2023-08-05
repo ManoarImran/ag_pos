@@ -23,13 +23,13 @@ class InventoryPage extends StatelessWidget {
         color: Colors.yellow, // Set the background color to yellow
         child: const InventoryPageBody(),
       ),
-        floatingActionButton: new FloatingActionButton(
+        floatingActionButton: FloatingActionButton(
             elevation: 0.0,
-            child: new Icon(Icons.add),
-            backgroundColor: new Color(0xFF001C30),
+            backgroundColor: const Color(0xFF001C30),
             onPressed: (){
               Navigator.push(context, MaterialPageRoute(builder: (context) => AddItemPage()));
-            }
+            },
+            child: const Icon(Icons.add)
         )
     );
   }

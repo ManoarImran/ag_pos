@@ -10,7 +10,7 @@ class AddItemPage extends StatelessWidget {
         backgroundColor: const Color(0xFF001C30),
         title: const Center(
           child: Text(
-            'HOME',
+            'Add Item',
             style: TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.normal,
@@ -62,28 +62,23 @@ class _additemPageBodyState extends State<additemPageBody> {
                 ),
               ),
             ),
-            Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: DropdownButton<selectType>(
-                      value: seletType,
-                      onChanged: (selectType? newValue) {
-                        setState(() {
-                          seletType = newValue!;
-                        });
-                      },
-                      items: inventoryType.map((selectType city) {
-                        return DropdownMenuItem<selectType>(
-                          value: city,
-                          child: Text(city.name),
-                        );
-                      }).toList(),
-                    ),
-                  ),
-                ],
+            Flexible(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: DropdownButton<selectType>(
+                  value: seletType,
+                  onChanged: (selectType? newValue) {
+                    setState(() {
+                      seletType = newValue!;
+                    });
+                  },
+                  items: inventoryType.map((selectType city) {
+                    return DropdownMenuItem<selectType>(
+                      value: city,
+                      child: Text(city.name),
+                    );
+                  }).toList(),
+                ),
               ),
             ),
           ],
@@ -102,36 +97,25 @@ class _additemPageBodyState extends State<additemPageBody> {
                 ),
               ),
             ),
-            // Container(
-            //   padding: const EdgeInsets.all(20),
-            //   child: TextField(
-            //     cursorColor: const Color(0xFF001C30),
-            //     // Set the cursor color to #001C30
-            //     controller: ItemName,
-            //     decoration: const InputDecoration(
-            //       enabledBorder: UnderlineInputBorder(
-            //         borderSide: BorderSide(
-            //             width: 2,
-            //             color: Color(
-            //                 0xFF001C30)), // Set the border color to #001C30
-            //       ),
-            //       focusedBorder: UnderlineInputBorder(
-            //         borderSide: BorderSide(
-            //             width: 2,
-            //             color: Color(
-            //                 0xFF176B87)), // Set the focused border color to #176B87
-            //       ),
-            //       icon: Icon(Icons.email),
-            //       iconColor: Color(0xFF001C30),
-            //       // Set the icon color to #001C30
-            //       labelText: 'Email',
-            //       labelStyle: TextStyle(
-            //         color: Color(
-            //             0xFF001C30), // Set the label color to #001C30
-            //       ),
-            //     ),
-            //   ),
-            // ),
+            Flexible(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: DropdownButton<selectType>(
+                  value: seletType,
+                  onChanged: (selectType? newValue) {
+                    setState(() {
+                      seletType = newValue!;
+                    });
+                  },
+                  items: inventoryType.map((selectType city) {
+                    return DropdownMenuItem<selectType>(
+                      value: city,
+                      child: Text(city.name),
+                    );
+                  }).toList(),
+                ),
+              ),
+            ),
           ],
         ),
         Row(
@@ -148,28 +132,23 @@ class _additemPageBodyState extends State<additemPageBody> {
                 ),
               ),
             ),
-            Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: DropdownButton<selectType>(
-                      value: seletType,
-                      onChanged: (selectType? newValue) {
-                        setState(() {
-                          seletType = newValue!;
-                        });
-                      },
-                      items: inventoryType.map((selectType city) {
-                        return DropdownMenuItem<selectType>(
-                          value: city,
-                          child: Text(city.name),
-                        );
-                      }).toList(),
-                    ),
-                  ),
-                ],
+            Flexible(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: DropdownButton<selectType>(
+                  value: seletType,
+                  onChanged: (selectType? newValue) {
+                    setState(() {
+                      seletType = newValue!;
+                    });
+                  },
+                  items: inventoryType.map((selectType city) {
+                    return DropdownMenuItem<selectType>(
+                      value: city,
+                      child: Text(city.name),
+                    );
+                  }).toList(),
+                ),
               ),
             ),
           ],
@@ -188,28 +167,23 @@ class _additemPageBodyState extends State<additemPageBody> {
                 ),
               ),
             ),
-            Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: DropdownButton<selectType>(
-                      value: seletType,
-                      onChanged: (selectType? newValue) {
-                        setState(() {
-                          seletType = newValue!;
-                        });
-                      },
-                      items: inventoryType.map((selectType city) {
-                        return DropdownMenuItem<selectType>(
-                          value: city,
-                          child: Text(city.name),
-                        );
-                      }).toList(),
-                    ),
-                  ),
-                ],
+            Flexible(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: DropdownButton<selectType>(
+                  value: seletType,
+                  onChanged: (selectType? newValue) {
+                    setState(() {
+                      seletType = newValue!;
+                    });
+                  },
+                  items: inventoryType.map((selectType city) {
+                    return DropdownMenuItem<selectType>(
+                      value: city,
+                      child: Text(city.name),
+                    );
+                  }).toList(),
+                ),
               ),
             ),
           ],
@@ -228,28 +202,23 @@ class _additemPageBodyState extends State<additemPageBody> {
                 ),
               ),
             ),
-            Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: DropdownButton<selectType>(
-                      value: seletType,
-                      onChanged: (selectType? newValue) {
-                        setState(() {
-                          seletType = newValue!;
-                        });
-                      },
-                      items: inventoryType.map((selectType city) {
-                        return DropdownMenuItem<selectType>(
-                          value: city,
-                          child: Text(city.name),
-                        );
-                      }).toList(),
-                    ),
-                  ),
-                ],
+            Flexible(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: DropdownButton<selectType>(
+                  value: seletType,
+                  onChanged: (selectType? newValue) {
+                    setState(() {
+                      seletType = newValue!;
+                    });
+                  },
+                  items: inventoryType.map((selectType city) {
+                    return DropdownMenuItem<selectType>(
+                      value: city,
+                      child: Text(city.name),
+                    );
+                  }).toList(),
+                ),
               ),
             ),
           ],
@@ -258,12 +227,18 @@ class _additemPageBodyState extends State<additemPageBody> {
           padding: const EdgeInsets.all(20),
           child: ElevatedButton(
             style: ElevatedButton.styleFrom(
-              primary:
-                  const Color(0xFF001C30), // Set the button color to #001C30
+              primary: const Color(
+                  0xFF001C30), // Set the button color to #001C30
             ),
             child: const Text('Create'),
             onPressed: () {
-              {}
+              {
+                // Navigator.pushReplacement(
+                //   context,
+                //   MaterialPageRoute(
+                //       builder: (context) => HomePage()),
+                // );
+              }
               ;
             },
           ),
