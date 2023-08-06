@@ -8,6 +8,7 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       body: LoginPageBody(),
     );
   }
@@ -28,156 +29,156 @@ class _LoginPageBodyState extends State<LoginPageBody> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(10),
-      child: Column(
-        children: [
-          const SizedBox(
-            height: 80,
-          ),
-          Container(
-            decoration: const BoxDecoration(
-              color: Color(0xFF176B87), // Set the color to #176B87
-              borderRadius: BorderRadius.all(
-                Radius.circular(20.0),
+      child: Container(
+        decoration: const BoxDecoration(
+            image: DecorationImage(
+              fit: BoxFit.cover,
+              image: AssetImage('assets/backgroundLogin.jpg')
+            )),
+        child: Column(
+          children: [
+            const SizedBox(
+              height: 80,
+            ),
+            Container(
+              decoration: const BoxDecoration(
+                color: Colors.white, // Set the color to #176B87
+                borderRadius: BorderRadius.all(
+                  Radius.circular(20.0),
+                ),
+              ),
+              height: 70,
+              width: 70,
+              child: Image.asset(
+                'assets/point-of-sale.png',
+                // color: Colors.orange,
               ),
             ),
-            height: 70,
-            width: 70,
-            child: Image.asset(
-              'assets/point-of-sale.png',
-              // color: Colors.orange,
-            ),
-          ),
-          Container(
-            alignment: Alignment.center,
-            padding: const EdgeInsets.all(10),
-            child: const Text(
-              'POS',
-              style: TextStyle(
-                color: Colors.black, // Set the text color to white
-                fontWeight: FontWeight.w500,
-                fontSize: 24,
+            Container(
+              alignment: Alignment.center,
+              padding: const EdgeInsets.all(10),
+              child: const Text(
+                'POS',
+                style: TextStyle(
+                  color: Colors.white, // Set the text color to white
+                  fontWeight: FontWeight.w500,
+                  fontSize: 24,
+                ),
+                textAlign: TextAlign.center,
               ),
-              textAlign: TextAlign.center,
             ),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          Card(
-            elevation: 20,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(25.0),
+            const SizedBox(
+              height: 20,
             ),
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
+            Card( color: Colors.transparent,
+              elevation: 0.5,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(25.0),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
                 child: Container(
-                  height: 350,
-                  child: Column(
-                    children: [
-                      const SizedBox(height: 10),
-                      Container(
-                        padding: const EdgeInsets.all(20),
-                        child: TextField(
-                          cursorColor: const Color(0xFF001C30),
-                          // Set the cursor color to #001C30
-                          controller: enrollController,
-                          decoration: const InputDecoration(
-                            enabledBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(
-                                  width: 2,
-                                  color: Color(
-                                      0xFF001C30)), // Set the border color to #001C30
-                            ),
-                            focusedBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(
-                                  width: 2,
-                                  color: Color(
-                                      0xFF176B87)), // Set the focused border color to #176B87
-                            ),
-                            icon: Icon(Icons.email),
-                            iconColor: Color(0xFF001C30),
-                            // Set the icon color to #001C30
-                            labelText: 'Email',
-                            labelStyle: TextStyle(
-                              color: Color(
-                                  0xFF001C30), // Set the label color to #001C30
-                            ),
-                          ),
-                        ),
-                      ),
-                      Container(
-                        padding: const EdgeInsets.all(20),
-                        child: TextField(
-                          cursorColor: const Color(0xFF001C30),
-                          // Set the cursor color to #001C30
-                          obscureText: true,
-                          controller: passwordController,
-                          decoration: const InputDecoration(
-                            enabledBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(
-                                  width: 2,
-                                  color: Color(
-                                      0xFF001C30)), // Set the border color to #001C30
-                            ),
-                            focusedBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(
-                                  width: 2,
-                                  color: Color(
-                                      0xFF176B87)), // Set the focused border color to #176B87
-                            ),
-                            icon: Icon(Icons.key),
-                            iconColor: Color(0xFF001C30),
-                            // Set the icon color to #001C30
-                            labelText: 'Password',
-                            labelStyle: TextStyle(
-                              color: Color(
-                                  0xFF001C30), // Set the label color to #001C30
+                  child: Container(
+                    height: 350,
+                    child: Column(
+                      children: [
+                        const SizedBox(height: 10),
+                        Container(
+                          padding: const EdgeInsets.all(20),
+                          child: TextField(
+                            cursorColor:  Colors.white,
+                            // Set the cursor color to #001C30
+                            controller: enrollController,
+                            decoration: const InputDecoration(
+                              enabledBorder: UnderlineInputBorder(
+                                borderSide: BorderSide(
+                                    width: 2,
+                                    color: Colors.white30), // Set the border color to #001C30
+                              ),
+                              focusedBorder: UnderlineInputBorder(
+                                borderSide: BorderSide(
+                                    width: 2,
+                                    color: Colors.white), // Set the focused border color to #176B87
+                              ),
+                              icon: Icon(Icons.email),
+                              iconColor: Colors.white,
+                              // Set the icon color to #001C30
+                              labelText: 'Email',
+                              labelStyle: TextStyle(
+                                color: Colors.white, // Set the label color to #001C30
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                      const SizedBox(height: 10),
-                      TextButton(
-                        onPressed: () {
-                          //forgot password screen
-                        },
-                        child: const Text(
-                          'Forgot Password?',
-                          style: TextStyle(
-                            color: Color(
-                                0xFF001C30), // Set the text color to #001C30
+                        Container(
+                          padding: const EdgeInsets.all(20),
+                          child: TextField(
+                            cursorColor:  Colors.white,
+                            // Set the cursor color to #001C30
+                            obscureText: true,
+                            controller: passwordController,
+                            decoration: const InputDecoration(
+                              enabledBorder: UnderlineInputBorder(
+                                borderSide: BorderSide(
+                                    width: 2,
+                                    color: Colors.white30), // Set the border color to #001C30
+                              ),
+                              focusedBorder: UnderlineInputBorder(
+                                borderSide: BorderSide(
+                                    width: 2,
+                                    color: Colors.white), // Set the focused border color to #176B87
+                              ),
+                              icon: Icon(Icons.key),
+                              iconColor: Colors.white,
+                              // Set the icon color to #001C30
+                              labelText: 'Password',
+                              labelStyle: TextStyle(
+                                color: Colors.white, // Set the label color to #001C30
+                              ),
+                            ),
                           ),
                         ),
-                      ),
-                      const SizedBox(height: 10),
-                      Padding(
-                        padding: const EdgeInsets.all(20),
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            primary: const Color(
-                                0xFF001C30), // Set the button color to #001C30
-                          ),
-                          child: const Text('Login'),
+                        const SizedBox(height: 10),
+                        TextButton(
                           onPressed: () {
-                            {
-                              Navigator.pushReplacement(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => HomePage()),
-                              );
-                            }
-                            ;
+                            //forgot password screen
                           },
+                          child: const Text(
+                            'Forgot Password?',
+                            style: TextStyle(
+                              color: Colors.white, // Set the text color to #001C30
+                            ),
+                          ),
                         ),
-                      ),
-                    ],
+                        const SizedBox(height: 10),
+                        Padding(
+                          padding: const EdgeInsets.all(20),
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              primary: const Color(
+                                  0xFF001C30), // Set the button color to #001C30
+                            ),
+                            child: const Text('Login'),
+                            onPressed: () {
+                              {
+                                Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => HomePage()),
+                                );
+                              }
+                              ;
+                            },
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
