@@ -24,7 +24,11 @@ class HomePage extends StatelessWidget {
           ),
         ),
       ),
-      body: const HomePageBody(),
+      body:Container( decoration: const BoxDecoration(
+          image: DecorationImage(
+              fit: BoxFit.cover,
+              image: AssetImage('assets/backgroundLogin.jpg')
+          )),child: const HomePageBody()),
     );
   }
 }

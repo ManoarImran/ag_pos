@@ -20,7 +20,11 @@ class InventoryPage extends StatelessWidget {
         ),
       ),
       body: Container(
-        color: Colors.yellow, // Set the background color to yellow
+        decoration: const BoxDecoration(
+            image: DecorationImage(
+                fit: BoxFit.cover,
+                image: AssetImage('assets/backgroundLogin.jpg')
+            )), // Set the background color to yellow
         child: const InventoryPageBody(),
       ),
         floatingActionButton: FloatingActionButton(

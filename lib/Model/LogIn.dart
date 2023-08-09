@@ -70,108 +70,111 @@ class _LoginPageBodyState extends State<LoginPageBody> {
             const SizedBox(
               height: 20,
             ),
-            Card( color: Colors.transparent,
-              elevation: 0.5,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(25.0),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Card( color: Colors.transparent,
+                elevation: 0.5,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(25.0),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
                   child: Container(
-                    height: 350,
-                    child: Column(
-                      children: [
-                        const SizedBox(height: 10),
-                        Container(
-                          padding: const EdgeInsets.all(20),
-                          child: TextField(
-                            cursorColor:  Colors.white,
-                            // Set the cursor color to #001C30
-                            controller: enrollController,
-                            decoration: const InputDecoration(
-                              enabledBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                    width: 2,
-                                    color: Colors.white30), // Set the border color to #001C30
-                              ),
-                              focusedBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                    width: 2,
-                                    color: Colors.white), // Set the focused border color to #176B87
-                              ),
-                              icon: Icon(Icons.email),
-                              iconColor: Colors.white,
-                              // Set the icon color to #001C30
-                              labelText: 'Email',
-                              labelStyle: TextStyle(
-                                color: Colors.white, // Set the label color to #001C30
-                              ),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          padding: const EdgeInsets.all(20),
-                          child: TextField(
-                            cursorColor:  Colors.white,
-                            // Set the cursor color to #001C30
-                            obscureText: true,
-                            controller: passwordController,
-                            decoration: const InputDecoration(
-                              enabledBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                    width: 2,
-                                    color: Colors.white30), // Set the border color to #001C30
-                              ),
-                              focusedBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                    width: 2,
-                                    color: Colors.white), // Set the focused border color to #176B87
-                              ),
-                              icon: Icon(Icons.key),
-                              iconColor: Colors.white,
-                              // Set the icon color to #001C30
-                              labelText: 'Password',
-                              labelStyle: TextStyle(
-                                color: Colors.white, // Set the label color to #001C30
+                    child: Container(
+                      height: 350,
+                      child: Column(
+                        children: [
+                          const SizedBox(height: 10),
+                          Container(
+                            padding: const EdgeInsets.all(20),
+                            child: TextField(
+                              cursorColor:  Colors.white,
+                              // Set the cursor color to #001C30
+                              controller: enrollController,
+                              decoration: const InputDecoration(
+                                enabledBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                      width: 2,
+                                      color: Colors.white30), // Set the border color to #001C30
+                                ),
+                                focusedBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                      width: 2,
+                                      color: Colors.white), // Set the focused border color to #176B87
+                                ),
+                                icon: Icon(Icons.email),
+                                iconColor: Colors.white,
+                                // Set the icon color to #001C30
+                                labelText: 'Email',
+                                labelStyle: TextStyle(
+                                  color: Colors.white, // Set the label color to #001C30
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                        const SizedBox(height: 10),
-                        TextButton(
-                          onPressed: () {
-                            //forgot password screen
-                          },
-                          child: const Text(
-                            'Forgot Password?',
-                            style: TextStyle(
-                              color: Colors.white, // Set the text color to #001C30
+                          Container(
+                            padding: const EdgeInsets.all(20),
+                            child: TextField(
+                              cursorColor:  Colors.white,
+                              // Set the cursor color to #001C30
+                              obscureText: true,
+                              controller: passwordController,
+                              decoration: const InputDecoration(
+                                enabledBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                      width: 2,
+                                      color: Colors.white30), // Set the border color to #001C30
+                                ),
+                                focusedBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                      width: 2,
+                                      color: Colors.white), // Set the focused border color to #176B87
+                                ),
+                                icon: Icon(Icons.key),
+                                iconColor: Colors.white,
+                                // Set the icon color to #001C30
+                                labelText: 'Password',
+                                labelStyle: TextStyle(
+                                  color: Colors.white, // Set the label color to #001C30
+                                ),
+                              ),
                             ),
                           ),
-                        ),
-                        const SizedBox(height: 10),
-                        Padding(
-                          padding: const EdgeInsets.all(20),
-                          child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              primary: const Color(
-                                  0xFF001C30), // Set the button color to #001C30
-                            ),
-                            child: const Text('Login'),
+                          const SizedBox(height: 10),
+                          TextButton(
                             onPressed: () {
-                              {
-                                Navigator.pushReplacement(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => HomePage()),
-                                );
-                              }
-                              ;
+                              //forgot password screen
                             },
+                            child: const Text(
+                              'Forgot Password?',
+                              style: TextStyle(
+                                color: Colors.white, // Set the text color to #001C30
+                              ),
+                            ),
                           ),
-                        ),
-                      ],
+                          const SizedBox(height: 10),
+                          Padding(
+                            padding: const EdgeInsets.all(20),
+                            child: ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                primary: const Color(
+                                    0xFF001C30), // Set the button color to #001C30
+                              ),
+                              child: const Text('Login'),
+                              onPressed: () {
+                                {
+                                  Navigator.pushReplacement(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => HomePage()),
+                                  );
+                                }
+                                ;
+                              },
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
