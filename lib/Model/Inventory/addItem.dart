@@ -8,14 +8,12 @@ class AddItemPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xFF001C30),
-        title: const Center(
-          child: Text(
-            'Add Item',
-            style: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.normal,
-              color: Colors.white,
-            ),
+        title: Text(
+          'Add Item',
+          style: TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.normal,
+            color: Colors.white,
           ),
         ),
       ),
@@ -34,8 +32,6 @@ class additemPageBody extends StatefulWidget {
 class _additemPageBodyState extends State<additemPageBody> {
   selectType? seletType;
   // Selected Inventory object
-  final List<String> items = ["Item 1", "Item 2", "Item 3", "Item 4"];
-
   final List<selectType> inventoryType = [
     selectType(1, 'Type1'),
     selectType(2, 'Type2'),
@@ -43,9 +39,6 @@ class _additemPageBodyState extends State<additemPageBody> {
     selectType(4, 'Type4'),
   ];
 
-
-  String selectedValue = 'Option 1';
-  List<String> options = ['Option 1', 'Option 2', 'Option 3', 'Option 4'];
 
   TextEditingController ItemName = TextEditingController();
   TextEditingController addBalance = TextEditingController();
@@ -57,7 +50,7 @@ class _additemPageBodyState extends State<additemPageBody> {
         Row(
           children: [
             Container(
-              width: 110,
+              width: 115,
               padding: const EdgeInsets.all(8.0),
               child: const Text(
                 'Type:',
@@ -96,7 +89,7 @@ class _additemPageBodyState extends State<additemPageBody> {
           children: [
              Container(
               padding: const EdgeInsets.all(8.0),
-              width: 110,
+              width: 115,
               child: const Text(
                 'Item Name:',
                 style: TextStyle(
@@ -134,7 +127,7 @@ class _additemPageBodyState extends State<additemPageBody> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Container(
-              width: 110,
+              width: 115,
               padding: const EdgeInsets.all(8.0),
               child: const Text(
                 'Balance:',
@@ -173,7 +166,7 @@ class _additemPageBodyState extends State<additemPageBody> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
-              width: 110,
+              width: 115,
               padding: const EdgeInsets.all(8.0),
               child: const Text(
                 'UOM:',
@@ -211,7 +204,7 @@ class _additemPageBodyState extends State<additemPageBody> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
-              width: 110,
+              width: 115,
               padding: const EdgeInsets.all(8.0),
               child: const Text(
                 'Warehouse:',

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'ProdutctDetails.dart';
 import 'addItem.dart';
 
 class InventoryPage extends StatelessWidget {
@@ -8,34 +8,26 @@ class InventoryPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: const Color(0xFF001C30),
-        title: const Text(
-          'Inventory',
-          style: TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.normal,
-            color: Colors.white,
+        appBar: AppBar(
+          backgroundColor: const Color(0xFF001C30),
+          title: const Text(
+            'Inventory',
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.normal,
+              color: Colors.white,
+            ),
           ),
         ),
-      ),
-      body: Container(
-        decoration: const BoxDecoration(
-            image: DecorationImage(
-                fit: BoxFit.cover,
-                image: AssetImage('assets/backgroundLogin.jpg')
-            )), // Set the background color to yellow
-        child: const InventoryPageBody(),
-      ),
+        body: const InventoryPageBody(),
         floatingActionButton: FloatingActionButton(
             elevation: 0.0,
             backgroundColor: const Color(0xFF001C30),
-            onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => AddItemPage()));
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const AddItemPage()));
             },
-            child: const Icon(Icons.add)
-        )
-    );
+            child: const Icon(Icons.add)));
   }
 }
 
@@ -57,16 +49,30 @@ class _InventoryPageBodyState extends State<InventoryPageBody> {
     Intventory(4, 'Materials'),
   ];
 
+  final List<String> ListItems = [
+    'Item 1',
+    'Item 2',
+    'Item 3',
+    'Item 4',
+    'Item 5',
+    'Item 6',
+    'Item 7',
+    'Item 8',
+    'Item 9',
+    'Item 10',
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text(
+            Container(
+              width: 110,
+              padding: const EdgeInsets.all(8.0),
+              child: const Text(
                 'Type:',
                 style: TextStyle(
                   fontSize: 18,
@@ -75,46 +81,74 @@ class _InventoryPageBodyState extends State<InventoryPageBody> {
                 ),
               ),
             ),
-            Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: DropdownButton<Intventory>(
-                      value: _selectedInventory,
-                      onChanged: (Intventory? newValue) {
-                        setState(() {
-                          _selectedInventory = newValue!;
-                        });
-                      },
-                      items: inventoryType.map((Intventory city) {
-                        return DropdownMenuItem<Intventory>(
-                          value: city,
-                          child: Text(city.name),
-                        );
-                      }).toList(),
-                    ),
-                  ),
-                  // SizedBox(height: 20),
-                  // _selectedCity != null
-                  //     ? Text(
-                  //         'Selected City: ${_selectedCity!.name}',
-                  //         style: TextStyle(fontSize: 20),
-                  //       )
-                  //     : Text(''),
-                  // ListView.builder(
-                  //   itemCount: items.length,
-                  //   itemBuilder: (context, index) {
-                  //     return ListTile(
-                  //       title: Text(items[index]),
-                  //     );
-                  //   },
-                  // )
-                ],
+            Flexible(
+              child: DropdownButton<Intventory>(
+                isExpanded: true,
+                value: _selectedInventory,
+                onChanged: (Intventory? newValue) {
+                  setState(() {
+                    _selectedInventory = newValue!;
+                  });
+                },
+                items: inventoryType.map((Intventory city) {
+                  return DropdownMenuItem<Intventory>(
+                    value: city,
+                    child: Text(city.name),
+                  );
+                }).toList(),
               ),
             ),
           ],
+        ),
+        Container(
+          height: 0.5,
+          color: Colors.grey,
+        ),
+        Expanded(
+          child: SizedBox(
+            height: 500,
+            child: ListView.builder(
+              itemCount: ListItems.length,
+              itemBuilder: (context, index) {
+                return Card(
+                  elevation: 1,
+                  child: ListTile(
+                    title: Text(ListItems[index]),
+                    subtitle: const Text(
+                      'Sub',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.normal,
+                        color: Colors.black,
+                      ),
+                    ),
+                    trailing: SizedBox(
+                      height: 30,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          primary: const Color(
+                              0xFF001C30), // Set the button color to #001C30
+                        ),
+                        child: const Text('Details'),
+                        onPressed: () {
+                          {
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => ProductDetails()),
+                            );
+                          }
+                        },
+                      ),
+                    ),
+                    // onTap: () {
+                    //   // Do something when an item is tapped
+                    // },
+                  ),
+                );
+              },
+            ),
+          ),
         ),
       ],
     );
