@@ -65,47 +65,50 @@ class _ProductDetailsBodyState extends State<ProductDetailsBody> {
   Widget build(BuildContext context) {
     return  Column(
       children: [
-        Card( color: Colors.white, elevation: 5,
-          child: Column(children: [
-            Row(
-              children: [
-                Container(width: 115 ,child: const Text("Running Stock:")),
-                const Flexible(child: Text("..api..")),
-              ],
-            ),
-            Row(
-              children: [
-                Container(width: 115 ,child: const Text("Openning Stock:")),
-                const Flexible(child: Text("..api..")),
-              ],
-            ),
-            Row(
-              children: [
-                Flexible(
-                  child: Row(
-                    children: [
-                      Container(width: 115 ,child: const Text("Type:")),
-                      const Flexible(child: Text("..api..")),
-                    ],
+        Card( color: Colors.cyan, elevation: 5,
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(children: [
+              Row(
+                children: [
+                  Container(width: 115 ,child: const Text("Running Stock:")),
+                  const Flexible(child: Text("..api..")),
+                ],
+              ),
+              Row(
+                children: [
+                  Container(width: 115 ,child: const Text("Openning Stock:")),
+                  const Flexible(child: Text("..api..")),
+                ],
+              ),
+              Row(
+                children: [
+                  Flexible(
+                    child: Row(
+                      children: [
+                        Container(width: 115 ,child: const Text("Type:")),
+                        const Flexible(child: Text("..api..")),
+                      ],
+                    ),
                   ),
-                ),
-                Flexible(
-                  child: Row(
-                    children: [
-                      Container(width: 115 ,child: const Text("UOM:")),
-                      const Flexible(child: Text("..api..")),
-                    ],
+                  Flexible(
+                    child: Row(
+                      children: [
+                        Container(width: 115 ,child: const Text("UOM:")),
+                        const Flexible(child: Text("..api..")),
+                      ],
+                    ),
                   ),
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                Container(width: 115 ,child: const Text("Warehouse:")),
-                const Flexible(child: Text("..api..")),
-              ],
-            ),
-          ],),
+                ],
+              ),
+              Row(
+                children: [
+                  Container(width: 115 ,child: const Text("Warehouse:")),
+                  const Flexible(child: Text("..api..")),
+                ],
+              ),
+            ],),
+          ),
         ),
         Expanded(
           child: SizedBox(
